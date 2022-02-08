@@ -1,0 +1,12 @@
+Each problem is in its own .c file. 
+    problem 1: p1.c
+    problem2 : p2.c
+    problem3a: p3V.c
+    problem3b: p3R.c
+    problem4 : p4.c
+
+    p1.c, p2.c and p4.c all require inputs from the command line. 
+        p1.c and p2.c take in an integer and will print out their results
+        p4.c will take in a string which is the input .csv file and will create a new output file called "problem4Result.csv"
+
+

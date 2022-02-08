@@ -41,6 +41,8 @@ void bubble_sort_copy_value(elem_t **head) {
         }
         pointer2 = pointer;
     } while(swapped);
+    free(pointer);
+    free(pointer2);
 }
 
 void bubble_sort_copy_ref(elem_t **head) {
