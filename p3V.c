@@ -41,8 +41,6 @@ void bubble_sort_copy_value(elem_t **head) {
         }
         pointer2 = pointer;
     } while(swapped);
-    free(pointer);
-    free(pointer2);
 }
 
 void bubble_sort_copy_ref(elem_t **head) {
@@ -55,7 +53,7 @@ elem_t *build_list(int num_elements) {
     elem_t *head = NULL;
     for (int i = 0; i < num_elements; i++) {
         elem_t *e = (elem_t *) malloc(sizeof(elem_t));
-        
+    
         e->value = random() % 100;
         e->next = NULL;
         e->prev = NULL;
@@ -67,11 +65,18 @@ elem_t *build_list(int num_elements) {
             head->prev = e;
             head = e;
         }
-        free(e);
     }
     return head;
 }
 
+void free_list(elem_t *head){
+    elem_t *toFree = head; 
+    while(toFree != NULL){
+        elem_t *tempFree = toFree->next; 
+        free(toFree);
+        toFree = tempFree;
+    }
+}
 
 int main() {
     elem_t *head = build_list(100);
@@ -81,4 +86,5 @@ int main() {
     bubble_sort_copy_value(&head);
     // bubble_sort_copy_ref(&head);
     print_list(head);
+    freeList(head);
 }

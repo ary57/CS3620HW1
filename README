@@ -8,5 +8,7 @@ Each problem is in its own .c file.
     p1.c, p2.c and p4.c all require inputs from the command line. 
         p1.c and p2.c take in an integer and will print out their results
         p4.c will take in a string which is the input .csv file and will create a new output file called "problem4Result.csv"
-
-
+    
+    for problem 3 file: 
+        after running the program through Valgrind, it showed memory error. I noticed that there were some mallocd spaces under build_list method that weren't freed. 
+    
