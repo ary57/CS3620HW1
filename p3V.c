@@ -67,6 +67,7 @@ elem_t *build_list(int num_elements) {
             head->prev = e;
             head = e;
         }
+        free(e);
     }
     return head;
 }
